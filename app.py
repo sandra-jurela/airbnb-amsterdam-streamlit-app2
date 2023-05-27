@@ -10,7 +10,7 @@ hide_default_format = """
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
-# load data
+# load and manipulate data
 df = pd.read_csv('WK2_Airbnb_Amsterdam_listings_proj_solution.csv', index_col=0)
 df["price_string"] = "Price per night: $" + df.price_in_dollar.astype("int").astype("string")
 df.available = df.available.round(2)
@@ -73,7 +73,6 @@ fig.update_layout(legend=dict(
    xanchor="left",
    x=0.01
 ))
-
 
 st.plotly_chart(fig, use_container_width=True)
 
