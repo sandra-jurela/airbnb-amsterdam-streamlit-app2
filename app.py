@@ -25,7 +25,7 @@ sorted_room_type = df.room_type.unique()
 selected_room_type = st.multiselect('Room Type', sorted_room_type, sorted_room_type)
 sorted_superhost = df.host_is_superhost.unique()
 selected_superhost = st.multiselect('Host is Superhost', sorted_superhost, sorted_superhost)
-selected_accommodates = st.slider("Number of Guests", 1, int(df.accommodates.max()), value=2)
+selected_accommodates = st.slider("Minimum Number of Guests", 1, int(df.accommodates.max()), value=2)
 price_range = st.slider("Price per Night (US$)", 
                         0.0, 
                         float(df.price_in_dollar.max()), 
